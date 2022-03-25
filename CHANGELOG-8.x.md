@@ -1,6 +1,34 @@
 # Release Notes for 8.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v8.83.1...8.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v8.83.4...8.x)
+
+
+## [v8.83.4 (2022-03-08)](https://github.com/laravel/framework/compare/v8.83.3...v8.83.4)
+
+### Added
+- Added `Illuminate/Bus/Batch::__get()` ([#41361](https://github.com/laravel/framework/pull/41361))
+
+### Fixed
+- Fixed get and head options in `Illuminate/Http/Client/PendingRequest` ([23ff879](https://github.com/laravel/framework/commit/23ff879c6e5c6c6424b09a8b38c1686a9c89c4a5))
+
+
+## [v8.83.3 (2022-03-03)](https://github.com/laravel/framework/compare/v8.83.2...v8.83.3)
+
+### Fixed
+* $job can be an object in some methods by @villfa in https://github.com/laravel/framework/pull/41244
+* Fixes getting the trusted proxies IPs from the configuration file by @nunomaduro in https://github.com/laravel/framework/pull/41322
+
+
+## [v8.83.2 (2022-02-22)](https://github.com/laravel/framework/compare/v8.83.1...v8.83.2)
+
+### Added
+- Added support of Bitwise opperators in query ([#41112](https://github.com/laravel/framework/pull/41112))
+
+### Fixed
+- Fixes attempt to log deprecations on mocks ([#41057](https://github.com/laravel/framework/pull/41057))
+- Fixed loadAggregate not correctly applying casts ([#41108](https://github.com/laravel/framework/pull/41108))
+- Fixed updated with provided qualified updated_at ([#41133](https://github.com/laravel/framework/pull/41133))
+- Fixed database migrations $connection property ([#41161](https://github.com/laravel/framework/pull/41161))
 
 
 ## [v8.83.1 (2022-02-15)](https://github.com/laravel/framework/compare/v8.83.0...v8.83.1)
@@ -14,6 +42,25 @@
 - Fix replacing request options ([#40954](https://github.com/laravel/framework/pull/40954), [30e341b](https://github.com/laravel/framework/commit/30e341b7fe4e4d9019df42b7eff6c7dfa5ea30e5))
 - Fix isRelation() failing to check an Attribute ([#40967](https://github.com/laravel/framework/pull/40967))
 - Fix enum casts arrayable behaviour ([#40999](https://github.com/laravel/framework/pull/40999))
+
+
+## [v8.83.0 (2022-02-08)](https://github.com/laravel/framework/compare/v8.82.0...v8.83.0)
+
+### Added
+* Add isolation level configuration for Postgres connector by @rezaamini-ir in https://github.com/laravel/framework/pull/40767
+* Add a string helper to swap multiple keywords in a string by @amitmerchant1990 in https://github.com/laravel/framework/pull/40831 & https://github.com/laravel/framework/commit/220f4ac11d462b4ee9ff2cb9b48b93d6f560223a
+
+### Changed
+* Make `PendingRequest` `Conditionable` by @phillipfickl in https://github.com/laravel/framework/pull/40762
+* Add a BladeCompiler::renderComponent() method to render a component instance by @tobyzerner in https://github.com/laravel/framework/pull/40745
+* Doc block tweaks in `BladeCompiler.php` by @JayBizzle in https://github.com/laravel/framework/pull/40772
+* Revert Bit operators by @driesvints in https://github.com/laravel/framework/pull/40791
+* Improves `Support\Reflector` to support checking interfaces by @hassanhe in https://github.com/laravel/framework/pull/40822
+* Support cursor pagination with union query by @deleugpn in https://github.com/laravel/framework/pull/40848
+* Consistent `Stringable::swap()` & `Str::swap()` implementations by @derekmd in https://github.com/laravel/framework/pull/40855
+
+### Fixed
+* Do not set SYSTEMROOT to false by @Galaxy0419 in https://github.com/laravel/framework/pull/40819
 
 
 ## [v8.82.0 (2022-02-01)](https://github.com/laravel/framework/compare/v8.81.0...v8.82.0)
