@@ -1,6 +1,22 @@
 # Release Notes for 8.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v8.83.4...8.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v8.83.6...8.x)
+
+
+## [v8.83.6 (2022-03-29)](https://github.com/laravel/framework/compare/v8.83.5...v8.83.6)
+
+### Fixed
+- Stop throwing LazyLoadingViolationException for recently created model instances ([#41549](https://github.com/laravel/framework/pull/41549))
+- Close doctrineConnection on disconnect ([#41584](https://github.com/laravel/framework/pull/41584))
+- Fix require fails if is_file cached by opcache ([#41614](https://github.com/laravel/framework/pull/41614))
+- Fix collection nth where step <= offset ([#41645](https://github.com/laravel/framework/pull/41645))
+
+
+## [v8.83.5 (2022-03-15)](https://github.com/laravel/framework/compare/v8.83.4...v8.83.5)
+
+### Fixed
+- Backport dynamically access batch options ([#41361](https://github.com/laravel/framework/pull/41361))
+- Fixed get and head options in Illuminate/Http/Client/PendingRequest.php ([23ff879](https://github.com/laravel/framework/commit/23ff879c6e5c6c6424b09a8b38c1686a9c89c4a5))
 
 
 ## [v8.83.4 (2022-03-08)](https://github.com/laravel/framework/compare/v8.83.3...v8.83.4)
