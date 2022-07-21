@@ -2284,12 +2284,6 @@ class ValidationValidatorTest extends TestCase
 
         $v = new Validator($trans, ['foo' => '+12.3'], ['foo' => 'digits_between:1,6']);
         $this->assertFalse($v->passes());
-
-        $v = new Validator($trans, ['foo' => '1.2'], ['foo' => 'digits_between:1,10']);
-        $this->assertTrue($v->passes());
-
-        $v = new Validator($trans, ['foo' => '0.9876'], ['foo' => 'digits_between:1,5']);
-        $this->assertTrue($v->fails());
     }
 
     public function testValidateSize()
@@ -7114,6 +7108,28 @@ class ValidationValidatorTest extends TestCase
             'The baz field must contain entries for foo, fee, boo, bar',
             $validator->messages()->first('baz')
         );
+    }
+
+    public function testArrayKeysWithDotIntegerMin()
+    {
+        $trans = $this->getIlluminateArrayTranslator();
+
+        $data = [
+            'foo.bar' => -1,
+        ];
+
+        $rules = [
+            'foo\.bar' => 'integer|min:1',
+        ];
+
+        $expectedResult = [
+            'foo.bar' => [
+                'validation.min.numeric',
+            ],
+        ];
+
+        $validator = new Validator($trans, $data, $rules, [], []);
+        $this->assertEquals($expectedResult, $validator->getMessageBag()->getMessages());
     }
 
     protected function getTranslator()

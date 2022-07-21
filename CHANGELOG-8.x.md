@@ -1,6 +1,105 @@
 # Release Notes for 8.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v8.83.9...8.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v8.83.20...8.x)
+
+
+## [v8.83.20 (2022-07-19)](https://github.com/laravel/framework/compare/v8.83.19...v8.83.20)
+
+### Fixed
+- Fixed transaction attempts counter for sqlsrv ([#43176](https://github.com/laravel/framework/pull/43176))
+
+### Changed
+- Clear Facade resolvedInstances in queue worker resetScope callback ([#43215](https://github.com/laravel/framework/pull/43215))
+- Protect against ambiguous columns ([#43278](https://github.com/laravel/framework/pull/43278))
+
+
+## [v8.83.19 (2022-07-13)](https://github.com/laravel/framework/compare/v8.83.18...v8.83.19)
+
+### Fixed
+- Fixed forceCreate on MorphMany not returning newly created object ([#42996](https://github.com/laravel/framework/pull/42996))
+- Prevent double throwing chained exception on sync queue ([#42950](https://github.com/laravel/framework/pull/42950))
+
+### Changed
+- Disable Column Statistics for php artisan schema:dump on MariaDB ([#43027](https://github.com/laravel/framework/pull/43027))
+
+
+## [v8.83.18 (2022-06-28)](https://github.com/laravel/framework/compare/v8.83.17...v8.83.18)
+
+### Fixed
+- Fixed bug on forceCreate on a MorphMay relationship not including morph type ([#42929](https://github.com/laravel/framework/pull/42929))
+- Handle cursor paginator when no items are found ([#42963](https://github.com/laravel/framework/pull/42963))
+- Fixed Str::Mask() for repeating chars ([#42956](https://github.com/laravel/framework/pull/42956))
+
+
+## [v8.83.17 (2022-06-21)](https://github.com/laravel/framework/compare/v8.83.16...v8.83.17)
+
+### Added
+- Apply where's from union query builder in cursor pagination ([#42651](https://github.com/laravel/framework/pull/42651))
+- Handle collection creation around a single enum ([#42839](https://github.com/laravel/framework/pull/42839))
+
+### Fixed
+- Fixed Request offsetExists without routeResolver ([#42754](https://github.com/laravel/framework/pull/42754))
+- Fixed: Loose comparison causes the value not to be saved ([#42793](https://github.com/laravel/framework/pull/42793))
+
+
+## [v8.83.16 (2022-06-07)](https://github.com/laravel/framework/compare/v8.83.15...v8.83.16)
+
+### Fixed
+- Free reserved memory before handling fatal errors ([#42630](https://github.com/laravel/framework/pull/42630), [#42646](https://github.com/laravel/framework/pull/42646))
+- Prevent $mailer being reset when testing mailables that implement ShouldQueue ([#42695](https://github.com/laravel/framework/pull/42695))
+
+
+## [v8.83.15 (2022-05-31)](https://github.com/laravel/framework/compare/v8.83.14...v8.83.15)
+
+### Reverted
+- Revert digits changes in Validator ([c6d1a2d](https://github.com/laravel/framework/commit/c6d1a2da17e3aaaeb0ff5b8cc4879816d214b527), [#42562](https://github.com/laravel/framework/pull/42562))
+
+### Changed
+- Retain the original attribute value during validation of an array key with a dot for correct failure message ([#42395](https://github.com/laravel/framework/pull/42395))
+
+
+## [v8.83.14 (2022-05-24)](https://github.com/laravel/framework/compare/v8.83.13...v8.83.14)
+
+### Fixed
+- Add flush handler to output buffer for streamed test response (bugfix) ([#42481](https://github.com/laravel/framework/pull/42481))
+
+### Changed
+- Use duplicate instead of createFromBase to clone request when routes are cached ([#42420](https://github.com/laravel/framework/pull/42420))
+
+
+## [v8.83.13 (2022-05-17)](https://github.com/laravel/framework/compare/v8.83.12...v8.83.13)
+
+### Fixed
+- Fix PruneCommand finding its usage within other traits ([#42350](https://github.com/laravel/framework/pull/42350))
+
+### Changed
+- Consistency between digits and digits_between validation rules ([#42358](https://github.com/laravel/framework/pull/42358))
+- Corrects the use of "failed_jobs" instead of "job_batches" in BatchedTableCommand ([#42389](https://github.com/laravel/framework/pull/42389))
+
+
+## [v8.83.12 (2022-05-10)](https://github.com/laravel/framework/compare/v8.83.11...v8.83.12)
+
+### Fixed
+- Fixed multiple dots for digits_between rule ([#42330](https://github.com/laravel/framework/pull/42330))
+
+### Changed
+- Enable to modify HTTP Client request headers when using beforeSending() callback ([#42244](https://github.com/laravel/framework/pull/42244))
+- Set relation parent key when using forceCreate on HasOne and HasMany relations ([#42281](https://github.com/laravel/framework/pull/42281))
+
+
+## [v8.83.11 (2022-05-03)](https://github.com/laravel/framework/compare/v8.83.10...v8.83.11)
+
+### Fixed
+- Fix refresh during down in the stub ([#42217](https://github.com/laravel/framework/pull/42217))
+- Fix deprecation issue with translator ([#42216](https://github.com/laravel/framework/pull/42216))
+
+
+## [v8.83.10 (2022-04-27)](https://github.com/laravel/framework/compare/v8.83.9...v8.83.10)
+
+### Fixed
+- Fix schedule:work command Artisan binary name ([#42083](https://github.com/laravel/framework/pull/42083))
+- Fix array keys from cached routes in Illuminate/Routing/CompiledRouteCollection::getRoutesByMethod() ([#42078](https://github.com/laravel/framework/pull/42078))
+- Fix json_last_error issue with Illuminate/Http/JsonResponse::setData ([#42125](https://github.com/laravel/framework/pull/42125))
 
 
 ## [v8.83.9 (2022-04-19)](https://github.com/laravel/framework/compare/v8.83.8...v8.83.9)
