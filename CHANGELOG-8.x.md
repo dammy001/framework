@@ -1,6 +1,24 @@
 # Release Notes for 8.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v8.83.20...8.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v8.83.23...8.x)
+
+
+## [v8.83.23 (2022-07-26)](https://github.com/laravel/framework/compare/v8.83.22...v8.83.23)
+
+### Fixed
+- Fix DynamoDB locks with 0 seconds duration ([#43365](https://github.com/laravel/framework/pull/43365))
+
+
+## [v8.83.22 (2022-07-22)](https://github.com/laravel/framework/compare/v8.83.21...v8.83.22)
+
+### Revert
+- Revert ["Protect against ambiguous columns"](https://github.com/laravel/framework/pull/43278) ([#43362](https://github.com/laravel/framework/pull/43362))
+
+
+## [v8.83.21 (2022-07-21)](https://github.com/laravel/framework/compare/v8.83.20...v8.83.21)
+
+### Revert
+- Revert of ["Prevent double throwing chained exception on sync queue"](https://github.com/laravel/framework/pull/42950) ([#43354](https://github.com/laravel/framework/pull/43354))
 
 
 ## [v8.83.20 (2022-07-19)](https://github.com/laravel/framework/compare/v8.83.19...v8.83.20)
