@@ -48,8 +48,8 @@ class DatabaseMigrationRepository implements MigrationRepositoryInterface
     public function getRan()
     {
         return $this->table()
-                ->orderBy('batch', 'asc')
-                ->orderBy('migration', 'asc')
+                ->orderBy('batch')
+                ->orderBy('migration')
                 ->pluck('migration')->all();
     }
 
@@ -78,7 +78,7 @@ class DatabaseMigrationRepository implements MigrationRepositoryInterface
     {
         return $this->table()
             ->where('batch', $batch)
-            ->orderBy('migration', 'desc')
+            ->orderByDesc('migration')
             ->get()
             ->all();
     }
@@ -92,7 +92,7 @@ class DatabaseMigrationRepository implements MigrationRepositoryInterface
     {
         $query = $this->table()->where('batch', $this->getLastBatchNumber());
 
-        return $query->orderBy('migration', 'desc')->get()->all();
+        return $query->orderByDesc('migration')->get()->all();
     }
 
     /**
@@ -103,8 +103,8 @@ class DatabaseMigrationRepository implements MigrationRepositoryInterface
     public function getMigrationBatches()
     {
         return $this->table()
-                ->orderBy('batch', 'asc')
-                ->orderBy('migration', 'asc')
+                ->orderBy('batch')
+                ->orderBy('migration')
                 ->pluck('batch', 'migration')->all();
     }
 
@@ -219,7 +219,7 @@ class DatabaseMigrationRepository implements MigrationRepositoryInterface
     /**
      * Resolve the database connection instance.
      *
-     * @return \Illuminate\Database\Connection
+     * @return \Illuminate\Database\ConnectionInterface
      */
     public function getConnection()
     {
